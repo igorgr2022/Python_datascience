@@ -9,7 +9,7 @@ from numpy.random import randint
 #! сохраняю файл Matrix.csv
 
 #todo Загрузите данные из электронной таблицы в матрицу numpy.
-z1 = np.genfromtxt('/home/workivan/Python-datascience/Matrix.csv', delimiter='^')
+z1 = np.genfromtxt('/home/workivan/Python-datascience/task_2/Matrix.csv', delimiter='^')
 print('z1:')
 print(z1)
 
@@ -19,14 +19,15 @@ print('z2:')
 print(z2)
 
 #todo Перемножьте одно на другое и экспортируйте результат в электронную таблицу.
-z3 = np.zeros((15, 15))
-print('z3:')
-print(z3)
-for i in range(15):
-    for b in range(15):
-        z3[i][b] = z1[i][b] * z2[i][b] 
+# z3 = np.zeros((15, 15))
+# print('z3:')
+# print(z3)
+# for i in range(15):
+#     for b in range(15):
+#         z3[i][b] = z1[i][b] * z2[i][b] 
+z3 = z2.dot(z1) #!  вместо цикла (см. выше) перемножил через dot функцию
 
 print('z3:')
 print(z3)
-np.savetxt('z3.txt', z3)  #! сохраняю полученную матрицу z3 в файл z3.txt
+np.savetxt('task_2/z3.txt', z3)  #! сохраняю полученную матрицу z3 в файл z3.txt
 #! экспортирую результат из z3.txt в таблицу file_export_z3.csv
